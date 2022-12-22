@@ -36,6 +36,18 @@ public class LoginPage extends BasePage {
 
 	@FindBy(partialLinkText = "Forgot Your")
 	public WebElement forgotPassword;
+	
+	@FindBy(id = "continue")
+	public WebElement continueButton;
+
+	@FindBy(id = "forgotPassForm")
+	public WebElement passwordResetScreen;
+
+	@FindBy(xpath = "//a[text()='Return to Login']")
+	public WebElement returnToLoginButton;
+	
+	@FindBy(id = "idcard-identity")
+	public WebElement savedUsername;
 
 	
 	/**
@@ -44,7 +56,7 @@ public class LoginPage extends BasePage {
 	 * @param driver webDriver type
 	 * @return true if userName is entered
 	 */
-	public Boolean enterUsername(String userName, WebDriver driver) {
+	public Boolean enterUsername(String userName) {
 		if (username.isDisplayed()) {
 			username.sendKeys(userName);
 			return true;
@@ -59,7 +71,7 @@ public class LoginPage extends BasePage {
 	 * @param driver webDriver type
 	 * @return true if password is entered
 	 */
-	public Boolean enterPassword(String pass, WebDriver driver) {
+	public Boolean enterPassword(String pass) {
 		if (password.isDisplayed()) {
 			password.sendKeys(pass);
 			return true;
@@ -73,7 +85,7 @@ public class LoginPage extends BasePage {
 	 * @param driver
 	 * @return true if click is successful
 	 */
-	public Boolean clickLogin(WebDriver driver) {
+	public Boolean clickLogin() {
 		if (loginButton.isDisplayed()) {
 			loginButton.click();
 			return true;
@@ -82,5 +94,49 @@ public class LoginPage extends BasePage {
 		}
 	}
 	
+	public void clearPassword() {
+		password.clear();
+	}
+
+	public boolean isErrorMessageSeen() {
+		if (loginErrorMsg.isDisplayed()) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public boolean isFreeTrailSeen() {
+		return false;
+	}
+
+	public boolean isSavedUsernameSeen() {
+		if (savedUsername.isDisplayed()) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	public String getSavedUsername() {
+		return savedUsername.getText();
+	}
+
+	public boolean selectRemeberMeCheckbox() {
+		boolean checkboxStatus = false;
+		if (rememberMe.isSelected()) {
+			checkboxStatus = true;
+		} else {
+			rememberMe.click();
+			checkboxStatus = true;
+		}
+		return checkboxStatus;
+	}
+	
+	public Boolean launchApp(WebDriver driver) {
+		driver.get("https://login.salesforce.com");
+		return true;
+	}
+
 
 }

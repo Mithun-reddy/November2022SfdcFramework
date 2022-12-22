@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="1" ignored="0" total="3" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="67248" started-at="2022-12-22T19:47:14Z" finished-at="2022-12-22T19:48:22Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="67248" started-at="2022-12-22T19:47:14Z" finished-at="2022-12-22T19:48:22Z">
+      <class name="tests.LoginTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.LoginTest@363ee3a2]" name="setUp" is-config="true" duration-ms="897" started-at="2022-12-22T19:47:13Z" finished-at="2022-12-22T19:47:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="setDriver()[pri:0, instance:tests.LoginTest@363ee3a2]" name="setDriver" is-config="true" duration-ms="5645" started-at="2022-12-22T19:47:14Z" finished-at="2022-12-22T19:47:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setDriver -->
+        <test-method status="PASS" signature="loginErrorMsg_TC01()[pri:0, instance:tests.LoginTest@363ee3a2]" name="loginErrorMsg_TC01" duration-ms="6805" started-at="2022-12-22T19:47:20Z" finished-at="2022-12-22T19:47:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginErrorMsg_TC01 -->
+        <test-method status="PASS" signature="removeDriver()[pri:0, instance:tests.LoginTest@363ee3a2]" name="removeDriver" is-config="true" duration-ms="1260" started-at="2022-12-22T19:47:27Z" finished-at="2022-12-22T19:47:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- removeDriver -->
+        <test-method status="PASS" signature="setDriver()[pri:0, instance:tests.LoginTest@363ee3a2]" name="setDriver" is-config="true" duration-ms="2620" started-at="2022-12-22T19:47:28Z" finished-at="2022-12-22T19:47:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setDriver -->
+        <test-method status="FAIL" signature="loginToSF_TC02()[pri:0, instance:tests.LoginTest@363ee3a2]" name="loginToSF_TC02" duration-ms="19710" started-at="2022-12-22T19:47:31Z" finished-at="2022-12-22T19:47:50Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Free trial should be seen expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Free trial should be seen expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertTrue(Assert.java:44)
+at tests.LoginTest.loginToSF_TC02(LoginTest.java:49)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginToSF_TC02 -->
+        <test-method status="PASS" signature="removeDriver()[pri:0, instance:tests.LoginTest@363ee3a2]" name="removeDriver" is-config="true" duration-ms="1363" started-at="2022-12-22T19:47:50Z" finished-at="2022-12-22T19:47:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- removeDriver -->
+        <test-method status="PASS" signature="setDriver()[pri:0, instance:tests.LoginTest@363ee3a2]" name="setDriver" is-config="true" duration-ms="2588" started-at="2022-12-22T19:47:52Z" finished-at="2022-12-22T19:47:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setDriver -->
+        <test-method status="PASS" signature="rememberMe_TC03()[pri:0, instance:tests.LoginTest@363ee3a2]" name="rememberMe_TC03" duration-ms="25324" started-at="2022-12-22T19:47:54Z" finished-at="2022-12-22T19:48:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- rememberMe_TC03 -->
+        <test-method status="PASS" signature="removeDriver()[pri:0, instance:tests.LoginTest@363ee3a2]" name="removeDriver" is-config="true" duration-ms="1861" started-at="2022-12-22T19:48:20Z" finished-at="2022-12-22T19:48:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- removeDriver -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.LoginTest@363ee3a2]" name="tearDown" is-config="true" duration-ms="972" started-at="2022-12-22T19:48:22Z" finished-at="2022-12-22T19:48:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.LoginTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
