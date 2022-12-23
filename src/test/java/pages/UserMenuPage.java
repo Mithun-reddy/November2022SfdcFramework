@@ -1,5 +1,6 @@
 package pages;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -8,10 +9,15 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class UserMenuPage {
+import com.aventstack.extentreports.ExtentTest;
 
-	public UserMenuPage(WebDriver driver) {
+import utilities.Utilities;
+
+public class UserMenuPage extends BasePage{
+
+	public UserMenuPage(WebDriver driver, ExtentTest test) {
 		PageFactory.initElements(driver, this);
+		this.test = test;
 	}
 
 	@FindBy(id = "userNavLabel")
@@ -240,37 +246,51 @@ public class UserMenuPage {
 		}
 	}
 
-	public boolean clickOnUserMenu() {
+	public boolean clickOnUserMenu(WebDriver driver) throws IOException {
 		if (userMenu.isDisplayed()) {
 			userMenu.click();
+			test.info("user menu is opened");
 			return true;
 		} else {
+			test.addScreenCaptureFromPath(Utilities.captureScreenshot(driver));
 			return false;
 		}
 	}
 
-	public boolean openEditProfileModal() {
+	public boolean openEditProfileModal(WebDriver driver) throws IOException {
 		boolean isEditProfileWindowSeen = false;
 		if (editprofilebutton.isDisplayed()) {
 			editprofilebutton.click();
+			test.info("edit profile button is  seen");
 			if (EditProfilePopupwindow.isDisplayed()) {
 				isEditProfileWindowSeen = true;
 			}
+		} else {
+			test.fail("edit profile button is not seen");
+			test.addScreenCaptureFromPath(Utilities.captureScreenshot(driver));
 		}
 		return isEditProfileWindowSeen;
 	}
 
-	public boolean changeLastNameInAboutTab(WebDriver driver, String lastName) {
+	public boolean changeLastNameInAboutTab(WebDriver driver, String lastName) throws IOException {
 		driver.switchTo().frame("contactInfoContentId");
 		boolean isLastNameChanged = false;
 		if (Abouttab.isDisplayed()) {
 			Abouttab.click();
+			test.info("about tab is seen");
 			if (Abouttablastname.isDisplayed()) {
 				Abouttablastname.clear();
 				Abouttablastname.sendKeys(lastName);
 				saveAllButton.click();
+				test.info("clicked on save all button");
 				isLastNameChanged = true;
+			} else {
+				test.fail("About name tab is not visible");
+				test.addScreenCaptureFromPath(Utilities.captureScreenshot(driver));
 			}
+		} else {
+			test.fail("About tab is not visible");
+			test.addScreenCaptureFromPath(Utilities.captureScreenshot(driver));
 		}
 		driver.switchTo().defaultContent();
 		return isLastNameChanged;

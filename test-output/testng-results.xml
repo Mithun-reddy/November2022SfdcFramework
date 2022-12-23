@@ -2,32 +2,32 @@
 <testng-results skipped="0" failed="1" ignored="0" total="3" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="67248" started-at="2022-12-22T19:47:14Z" finished-at="2022-12-22T19:48:22Z">
+  <suite name="Default suite" duration-ms="73370" started-at="2022-12-23T17:40:25Z" finished-at="2022-12-23T17:41:39Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="67248" started-at="2022-12-22T19:47:14Z" finished-at="2022-12-22T19:48:22Z">
+    <test name="Default test" duration-ms="73370" started-at="2022-12-23T17:40:25Z" finished-at="2022-12-23T17:41:39Z">
       <class name="tests.LoginTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.LoginTest@363ee3a2]" name="setUp" is-config="true" duration-ms="897" started-at="2022-12-22T19:47:13Z" finished-at="2022-12-22T19:47:14Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.LoginTest@363ee3a2]" name="setUp" is-config="true" duration-ms="948" started-at="2022-12-23T17:40:24Z" finished-at="2022-12-23T17:40:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="setDriver()[pri:0, instance:tests.LoginTest@363ee3a2]" name="setDriver" is-config="true" duration-ms="5645" started-at="2022-12-22T19:47:14Z" finished-at="2022-12-22T19:47:20Z">
+        <test-method status="PASS" signature="setDriver()[pri:0, instance:tests.LoginTest@363ee3a2]" name="setDriver" is-config="true" duration-ms="8166" started-at="2022-12-23T17:40:25Z" finished-at="2022-12-23T17:40:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setDriver -->
-        <test-method status="PASS" signature="loginErrorMsg_TC01()[pri:0, instance:tests.LoginTest@363ee3a2]" name="loginErrorMsg_TC01" duration-ms="6805" started-at="2022-12-22T19:47:20Z" finished-at="2022-12-22T19:47:27Z">
+        <test-method status="PASS" signature="loginErrorMsg_TC01()[pri:0, instance:tests.LoginTest@363ee3a2]" name="loginErrorMsg_TC01" duration-ms="6932" started-at="2022-12-23T17:40:33Z" finished-at="2022-12-23T17:40:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginErrorMsg_TC01 -->
-        <test-method status="PASS" signature="removeDriver()[pri:0, instance:tests.LoginTest@363ee3a2]" name="removeDriver" is-config="true" duration-ms="1260" started-at="2022-12-22T19:47:27Z" finished-at="2022-12-22T19:47:28Z">
+        <test-method status="PASS" signature="removeDriver()[pri:0, instance:tests.LoginTest@363ee3a2]" name="removeDriver" is-config="true" duration-ms="1608" started-at="2022-12-23T17:40:40Z" finished-at="2022-12-23T17:40:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- removeDriver -->
-        <test-method status="PASS" signature="setDriver()[pri:0, instance:tests.LoginTest@363ee3a2]" name="setDriver" is-config="true" duration-ms="2620" started-at="2022-12-22T19:47:28Z" finished-at="2022-12-22T19:47:31Z">
+        <test-method status="PASS" signature="setDriver()[pri:0, instance:tests.LoginTest@363ee3a2]" name="setDriver" is-config="true" duration-ms="2460" started-at="2022-12-23T17:40:42Z" finished-at="2022-12-23T17:40:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setDriver -->
-        <test-method status="FAIL" signature="loginToSF_TC02()[pri:0, instance:tests.LoginTest@363ee3a2]" name="loginToSF_TC02" duration-ms="19710" started-at="2022-12-22T19:47:31Z" finished-at="2022-12-22T19:47:50Z">
+        <test-method status="FAIL" signature="loginToSF_TC02()[pri:0, instance:tests.LoginTest@363ee3a2]" name="loginToSF_TC02" duration-ms="22162" started-at="2022-12-23T17:40:44Z" finished-at="2022-12-23T17:41:07Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[Free trial should be seen expected [true] but found [false]]]>
@@ -37,7 +37,7 @@
 at org.testng.Assert.fail(Assert.java:96)
 at org.testng.Assert.failNotEquals(Assert.java:776)
 at org.testng.Assert.assertTrue(Assert.java:44)
-at tests.LoginTest.loginToSF_TC02(LoginTest.java:49)
+at tests.LoginTest.loginToSF_TC02(LoginTest.java:42)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -69,23 +69,23 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginToSF_TC02 -->
-        <test-method status="PASS" signature="removeDriver()[pri:0, instance:tests.LoginTest@363ee3a2]" name="removeDriver" is-config="true" duration-ms="1363" started-at="2022-12-22T19:47:50Z" finished-at="2022-12-22T19:47:52Z">
+        <test-method status="PASS" signature="removeDriver()[pri:0, instance:tests.LoginTest@363ee3a2]" name="removeDriver" is-config="true" duration-ms="2390" started-at="2022-12-23T17:41:07Z" finished-at="2022-12-23T17:41:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- removeDriver -->
-        <test-method status="PASS" signature="setDriver()[pri:0, instance:tests.LoginTest@363ee3a2]" name="setDriver" is-config="true" duration-ms="2588" started-at="2022-12-22T19:47:52Z" finished-at="2022-12-22T19:47:54Z">
+        <test-method status="PASS" signature="setDriver()[pri:0, instance:tests.LoginTest@363ee3a2]" name="setDriver" is-config="true" duration-ms="2811" started-at="2022-12-23T17:41:09Z" finished-at="2022-12-23T17:41:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setDriver -->
-        <test-method status="PASS" signature="rememberMe_TC03()[pri:0, instance:tests.LoginTest@363ee3a2]" name="rememberMe_TC03" duration-ms="25324" started-at="2022-12-22T19:47:54Z" finished-at="2022-12-22T19:48:20Z">
+        <test-method status="PASS" signature="rememberMe_TC03()[pri:0, instance:tests.LoginTest@363ee3a2]" name="rememberMe_TC03" duration-ms="24995" started-at="2022-12-23T17:41:12Z" finished-at="2022-12-23T17:41:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- rememberMe_TC03 -->
-        <test-method status="PASS" signature="removeDriver()[pri:0, instance:tests.LoginTest@363ee3a2]" name="removeDriver" is-config="true" duration-ms="1861" started-at="2022-12-22T19:48:20Z" finished-at="2022-12-22T19:48:22Z">
+        <test-method status="PASS" signature="removeDriver()[pri:0, instance:tests.LoginTest@363ee3a2]" name="removeDriver" is-config="true" duration-ms="1772" started-at="2022-12-23T17:41:37Z" finished-at="2022-12-23T17:41:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- removeDriver -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.LoginTest@363ee3a2]" name="tearDown" is-config="true" duration-ms="972" started-at="2022-12-22T19:48:22Z" finished-at="2022-12-22T19:48:23Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.LoginTest@363ee3a2]" name="tearDown" is-config="true" duration-ms="1228" started-at="2022-12-23T17:41:39Z" finished-at="2022-12-23T17:41:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
