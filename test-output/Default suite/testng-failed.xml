@@ -8,6 +8,7 @@
           <include name="loginToSF_TC02"/>
           <include name="removeDriver"/>
           <include name="setDriver"/>
+          <include name="loginErrorMsg_TC01"/>
           <include name="tearDown"/>
           <include name="setUp"/>
         </methods>

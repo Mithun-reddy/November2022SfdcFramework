@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.aventstack.extentreports.ExtentTest;
 
+import utilities.DataUtils;
 import utilities.Utilities;
 
 
@@ -160,8 +161,8 @@ public class LoginPage extends BasePage {
 		return checkboxStatus;
 	}
 	
-	public Boolean launchApp(WebDriver driver) {
-		driver.get("https://login.salesforce.com");
+	public Boolean launchApp(WebDriver driver) throws IOException {
+		driver.get(DataUtils.readAppLaunchUrl("prod.sfdc"));
 		test.info("App launched");
 		return true;
 	}
