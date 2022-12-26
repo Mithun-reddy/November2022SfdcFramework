@@ -11,6 +11,8 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.aventstack.extentreports.ExtentTest;
 
+import constants.FileConstants;
+import utilities.DataUtils;
 import utilities.Utilities;
 
 public class UserMenuPage extends BasePage{
@@ -18,6 +20,7 @@ public class UserMenuPage extends BasePage{
 	public UserMenuPage(WebDriver driver, ExtentTest test) {
 		PageFactory.initElements(driver, this);
 		this.test = test;
+//		this.driver = driver;
 	}
 
 	@FindBy(id = "userNavLabel")
@@ -72,21 +75,26 @@ public class UserMenuPage extends BasePage{
 
 	// filelink
 
-	@FindBy(xpath = "//*[@id=\"publisherAttachContentPost\"]")
+	@FindBy(xpath = "//*[@id='publisherAttachContentPost']")
 	public WebElement filelink;
 
 	@FindBy(xpath = "//a[@id='publisherAttachContentPost']/span[1]")
 	public WebElement contentpost;
 
 	@FindBy(css = "#chatterUploadFileAction")
-	public WebElement Uploadfile;
-
+	public WebElement Uploadfile; 
+	
 	@FindBy(css = "#chatterFile")
 	public WebElement Fileopen;
 
 	@FindBy(css = "#publishersharebutton")
 	public WebElement publish;
 
+	@FindBy(xpath = "//input[@value='Cancel Upload']")
+	public WebElement cancelUpload;
+	
+	@FindBy(id = "uploadLink")
+	public WebElement updateButton;
 	// Photo link
 
 	@FindBy(xpath = "//*[@id=\"publisherAttachLinkPost\"]/span[1]")
@@ -100,7 +108,15 @@ public class UserMenuPage extends BasePage{
 
 	@FindBy(id = "publishersharebutton")
 	public WebElement photosharebutton;
-
+	
+	@FindBy(id = "uploadPhotoContentId")
+	public WebElement photoUploadIframe;
+	
+	@FindBy(xpath = "//input[@id='j_id0:uploadFileForm:uploadBtn']")
+	public WebElement photoSaveButton;
+	
+	@FindBy(xpath = "//input[@id='j_id0:j_id7:save']")
+	public WebElement photoSaveButton2;
 	// My Settings
 	// personallink
 
@@ -113,6 +129,8 @@ public class UserMenuPage extends BasePage{
 	@FindBy(xpath = "//*[@id=\"RelatedUserLoginHistoryList_body\"]/div/a")
 	public WebElement logindisplay;
 
+	@FindBy (id = "contactInfoContentId")
+	public WebElement iframeAboutTab;
 	// Display&layoutlink
 
 	@FindBy(xpath = "//*[@id=\"DisplayAndLayout_font\"]")
@@ -168,6 +186,9 @@ public class UserMenuPage extends BasePage{
 
 	@FindBy(xpath = "//*[@id=\"summary\"]")
 	public WebElement SampleEventPopup;
+	
+	@FindBy (css = "#displayBadge")
+	public WebElement moderatorButton;
 
 	/**
 	 * This function is responsible to verify user menu items in user menu drop down
@@ -175,18 +196,19 @@ public class UserMenuPage extends BasePage{
 	 * 
 	 * @return {Boolean} true if all options are verified successfully else returns
 	 *         false
+	 * @throws IOException 
 	 */
-	public boolean verifyUserMenuItems() {
+	public boolean verifyUserMenuItems() throws IOException {
 		boolean isOptionVerified = true;
-		String[] expectedUserMenuItems = { "My Profile", "My Settings", "Developer Console",
-				"Switch to Lightning Experience", "Logout" };
+		
+		String[] expectedUserMenuItems = DataUtils.readErrorMessages("usermenu.items").split(",");
 //		List<WebElement> listOfuserMenuElements 
 		for (int i = 0; i < userMenuOptions.size(); i++) {
 			String actualUserMenuItemValue = userMenuOptions.get(i).getText();
 			if (actualUserMenuItemValue.equals(expectedUserMenuItems[i])) {
 				System.out.println("The option " + expectedUserMenuItems[i] + " passed");
 			} else {
-				System.out.println("The option " + expectedUserMenuItems[i] + " failed");
+				System.out.println("Actual "+actualUserMenuItemValue+" The option " + expectedUserMenuItems[i] + " failed");
 				isOptionVerified = false;
 			}
 		}
@@ -219,18 +241,20 @@ public class UserMenuPage extends BasePage{
 	 * @param message to be posted in text box
 	 * @param button
 	 * @return true if post is created else false
+	 * @throws InterruptedException 
 	 */
-	public boolean createAPost(WebDriver driver, String message) {
+	public boolean createAPost(WebDriver driver, String message) throws InterruptedException {
 		boolean isPostCreated = false;
-		if (postLink.isDisplayed()) {
+		if (Utilities.waitForElement(driver, postLink)) {
 			postLink.click();
 			System.out.println("Clicked on the text box");
 			driver.switchTo().frame(0);
 			postTextArea.sendKeys(message);
-			driver.switchTo().defaultContent();
+			driver.switchTo().parentFrame();
 			System.out.println("Entered the text in text box");
 			if (shareButton.isDisplayed()) {
 				shareButton.click();
+				Thread.sleep(3000);
 				System.out.println("Clicked on the post button");
 				isPostCreated = true;
 			}
@@ -238,10 +262,13 @@ public class UserMenuPage extends BasePage{
 		return isPostCreated;
 	}
 
-	public boolean isUserMenuSeen() {
+	public boolean isUserMenuSeen(WebDriver driver) throws IOException {
 		if (userMenu.isDisplayed()) {
+			test.info("user menu is seen");
 			return true;
 		} else {
+			test.addScreenCaptureFromPath(Utilities.captureScreenshot(driver));
+			test.info("user menu is not seen");
 			return false;
 		}
 	}
@@ -252,6 +279,7 @@ public class UserMenuPage extends BasePage{
 			test.info("user menu is opened");
 			return true;
 		} else {
+			test.fail("");
 			test.addScreenCaptureFromPath(Utilities.captureScreenshot(driver));
 			return false;
 		}
@@ -259,10 +287,10 @@ public class UserMenuPage extends BasePage{
 
 	public boolean openEditProfileModal(WebDriver driver) throws IOException {
 		boolean isEditProfileWindowSeen = false;
-		if (editprofilebutton.isDisplayed()) {
-			editprofilebutton.click();
+		if (Utilities.waitForElement(driver, editprofilebutton)) {
+			Utilities.jsClick(driver, editprofilebutton);
 			test.info("edit profile button is  seen");
-			if (EditProfilePopupwindow.isDisplayed()) {
+			if (Utilities.waitForElement(driver, EditProfilePopupwindow)) {
 				isEditProfileWindowSeen = true;
 			}
 		} else {
@@ -272,8 +300,8 @@ public class UserMenuPage extends BasePage{
 		return isEditProfileWindowSeen;
 	}
 
-	public boolean changeLastNameInAboutTab(WebDriver driver, String lastName) throws IOException {
-		driver.switchTo().frame("contactInfoContentId");
+	public boolean changeLastNameInAboutTab(WebDriver driver, String lastName) throws IOException, InterruptedException {
+		driver.switchTo().frame(iframeAboutTab);
 		boolean isLastNameChanged = false;
 		if (Abouttab.isDisplayed()) {
 			Abouttab.click();
@@ -283,6 +311,7 @@ public class UserMenuPage extends BasePage{
 				Abouttablastname.sendKeys(lastName);
 				saveAllButton.click();
 				test.info("clicked on save all button");
+				Thread.sleep(3000);
 				isLastNameChanged = true;
 			} else {
 				test.fail("About name tab is not visible");
@@ -292,8 +321,55 @@ public class UserMenuPage extends BasePage{
 			test.fail("About tab is not visible");
 			test.addScreenCaptureFromPath(Utilities.captureScreenshot(driver));
 		}
-		driver.switchTo().defaultContent();
+		driver.switchTo().parentFrame();
 		return isLastNameChanged;
 	}
 
+	
+	public boolean uploadAFile(WebDriver driver, String filepath) throws InterruptedException {
+		boolean isFileUploadSuccess = false;
+		if(Utilities.waitForElement(driver, filelink)) {
+			Utilities.jsClick(driver, filelink);
+		}
+		if(Utilities.waitForElement(driver, Uploadfile)) {
+			Uploadfile.click();
+			if(Utilities.waitForElement(driver, Fileopen)) {
+				Fileopen.sendKeys(filepath);
+				if(Utilities.waitForElement(driver, shareButton)) {
+					shareButton.click();
+					if(Utilities.waitForElementToDisappear(driver, cancelUpload)) {
+						isFileUploadSuccess = true;
+					}
+				}
+			}
+		}
+		return isFileUploadSuccess;
+	}
+	
+	
+	public void clickOnUpdatePhoto(WebDriver driver) {
+		Utilities.moveToElement(driver, moderatorButton);
+		if(Utilities.waitForElement(driver, updateButton)) {
+			updateButton.click();
+		}
+	}
+	
+	public boolean uploadPhoto(WebDriver driver, String filePath) throws InterruptedException {
+		clickOnUpdatePhoto(driver);
+		boolean isPhotoUploadSuccess = false;
+		driver.switchTo().frame(photoUploadIframe);
+		if(Utilities.waitForElement(driver, uploadphoto)) {
+			uploadphoto.sendKeys(filePath);
+			photoSaveButton.click();
+			Thread.sleep(5000);
+			isPhotoUploadSuccess = true;
+		}
+		if(Utilities.waitForElement(driver, photoSaveButton2)) {
+			photoSaveButton2.click();
+			Thread.sleep(3000);
+		}
+		driver.switchTo().parentFrame();
+		return isPhotoUploadSuccess;
+	}
+	
 }

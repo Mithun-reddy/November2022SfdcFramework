@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 
 import utilities.DataUtils;
 import utilities.Utilities;
@@ -166,6 +167,20 @@ public class LoginPage extends BasePage {
 		test.info("App launched");
 		return true;
 	}
-
-
+	
+	public Boolean loginToSFDC(WebDriver driver) throws IOException {
+		boolean isLoginSuccess = false;
+		boolean appLaunch = launchApp(driver);
+		if(appLaunch) {
+			enterUsername(driver, DataUtils.readAccounts("valid.username"));
+			enterPassword(driver, DataUtils.readAccounts("valid.password"));
+			clickLogin(driver);
+			isLoginSuccess = true;
+			test.pass("Logged in to SFDC");
+		} else {
+			test.fail("Should login in to SFDC");
+			test.addScreenCaptureFromPath(Utilities.captureScreenshot(driver), "Login page error");
+		}
+		return isLoginSuccess;
+	}
 }

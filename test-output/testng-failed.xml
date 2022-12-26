@@ -3,16 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.LoginTest">
+      <class name="tests.UserMenuTest">
         <methods>
-          <include name="loginToSF_TC02"/>
           <include name="removeDriver"/>
+          <include name="myProfile_TC06"/>
           <include name="setDriver"/>
-          <include name="loginErrorMsg_TC01"/>
           <include name="tearDown"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- tests.LoginTest -->
+      </class> <!-- tests.UserMenuTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

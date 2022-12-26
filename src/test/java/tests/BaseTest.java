@@ -2,6 +2,7 @@ package tests;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -30,6 +31,8 @@ public class BaseTest {
 	public void setDriver() {
 		WebDriver driver = BaseTest.getBrowserType("chrome", false);
 		threadLocalDriver.set(driver);
+		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+
 	}
 	
 	public static WebDriver getDriver() {
