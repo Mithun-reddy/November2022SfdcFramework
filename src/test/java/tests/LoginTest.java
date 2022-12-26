@@ -1,6 +1,7 @@
 package tests;
 
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -20,8 +21,9 @@ import utilities.Utilities;
 public class LoginTest extends BaseTest {
 
 	@Test
-	public void loginErrorMsg_TC01() throws IOException {
-		ExtentTest test = extent.createTest("loginErrorMsg_TC01");
+	public void loginErrorMsg_TC01(Method name) throws IOException {
+		ExtentTest test = extent.createTest(name.getName());
+		logger.info("started test " +name.getName());
 		WebDriver driver = BaseTest.getDriver();
 		LoginPage lp = new LoginPage(driver, test);
 		Assert.assertTrue(lp.launchApp(driver), "Should launch the sfdc app");
@@ -29,6 +31,7 @@ public class LoginTest extends BaseTest {
 		lp.clearPassword();
 		Assert.assertTrue(lp.clickLogin(driver), "Login button should be clicked");
 		Assert.assertEquals(lp.loginErrorMsg.getText(), DataUtils.readErrorMessages("login.error.message"));
+		logger.info("ending test " +name.getName());
 	}
 
 	@Test

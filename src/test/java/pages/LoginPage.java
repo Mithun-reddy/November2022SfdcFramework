@@ -68,12 +68,16 @@ public class LoginPage extends BasePage {
 	 */
 	public Boolean enterUsername(WebDriver driver,String userName) throws IOException {
 		if (username.isDisplayed()) {
+			logger.info("username is visible");
 			username.sendKeys(userName);
-			test.info("username is entered as "+userName);
+			test.info("username is entered ");
+			logger.info("username is entered as " +userName);
 			return true;
 		} else {
 			test.fail("username element is not displayed");
+			logger.info("username webelement not found");
 			test.addScreenCaptureFromPath(Utilities.captureScreenshot(driver));
+			logger.info("screen shot captured ");
 			return false;
 		}
 	}
@@ -88,7 +92,8 @@ public class LoginPage extends BasePage {
 	public Boolean enterPassword(WebDriver driver, String pass) throws IOException {
 		if (password.isDisplayed()) {
 			password.sendKeys(pass);
-			test.info("password is entered as "+pass);
+			test.info("password is entered");
+			logger.info("password is entered as " +pass);
 			return true;
 		} else {
 			test.fail("password element is not displayed");

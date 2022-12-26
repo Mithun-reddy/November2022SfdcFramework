@@ -4,6 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -21,14 +23,17 @@ import com.aventstack.extentreports.observer.ExtentObserver;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import pages.BasePage;
 
 public class BaseTest {
 	
 	protected static ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<WebDriver>();
 	public static ExtentReports extent = null;
+	protected static Logger logger = LogManager.getLogger(BasePage.class.getName());
 	
 	@BeforeMethod
 	public void setDriver() {
+		logger.info("setDriver(): Initiated");
 		WebDriver driver = BaseTest.getBrowserType("chrome", false);
 		threadLocalDriver.set(driver);
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
@@ -43,16 +48,19 @@ public class BaseTest {
 	public void removeDriver() {
 		getDriver().quit();
 		threadLocalDriver.remove();
+		logger.info("removeDriver(): success");
 	}
 	
 	@BeforeSuite
 	public void setUp() {
 		configureExtentReport();
+		logger.info("setUp(): success");
 	}
 	
 	@AfterSuite
 	public void tearDown() {
 		extent.flush();
+		logger.info("tearDown(): success");
 	}
 	
 	public static void configureExtentReport() {
@@ -61,6 +69,7 @@ public class BaseTest {
 		extent = new ExtentReports();
 		ExtentSparkReporter sparkHtml = new ExtentSparkReporter(reportPath);
 		extent.attachReporter(sparkHtml);
+		logger.info("configureExtentReport(): success");
 		
 	}
 
@@ -71,28 +80,35 @@ public class BaseTest {
 	 * @return driver object, on wrong param returns null
 	 */
 	public static WebDriver getBrowserType(String browserName, boolean headless) {
+		logger.info("getBrowserType(): Initiated");
 		String browser = browserName.toLowerCase();
 		WebDriver driver = null;
 		switch (browser) {
 		case "chrome":
 			WebDriverManager.chromedriver().setup();
+			logger.info("getBrowserType(): Chromedriver setup complete");
 			if(headless) {
 				ChromeOptions co = new ChromeOptions();
 				co.addArguments("--headless");
 				driver = new ChromeDriver(co);
+				logger.info("getBrowserType(): Chromedriver configured with headless mode");
 			} else {
 				driver = new ChromeDriver();
+				logger.info("getBrowserType(): Chromedriver configured");
 			}
 			break;
 
 		case "firefox":
 			WebDriverManager.firefoxdriver().setup();
+			logger.info("getBrowserType(): firefox setup complete");
 			if(headless) {
 				FirefoxOptions fo = new FirefoxOptions();
 				fo.addArguments("--headless");
+				logger.info("getBrowserType(): firefox configured with headless mode");
 				driver = new FirefoxDriver(fo);
 			} else {
 				driver = new FirefoxDriver();
+				logger.info("getBrowserType(): firefox browser configured");
 			}
 			break;
 
