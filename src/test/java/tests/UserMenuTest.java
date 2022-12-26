@@ -16,8 +16,9 @@ public class UserMenuTest extends BaseTest {
 	
 	@Test
 	public void myProfile_TC06() throws IOException, InterruptedException {
-		ExtentTest test = extent.createTest("myProfile_TC06");
-		WebDriver driver = BaseTest.getDriver();
+//		ExtentTest test = extent.createTest("myProfile_TC06");
+//		WebDriver 
+		driver = BaseTest.getDriver();
 		LoginPage lp = new LoginPage(driver, test);
 		UserMenuPage ump = new UserMenuPage(driver, test);
 		Assert.assertTrue(lp.loginToSFDC(driver), "Should launch the sfdc app");

@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" ignored="0" total="3" passed="2">
+<testng-results skipped="0" failed="2" ignored="2" total="6" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="48020" started-at="2022-12-26T12:23:40Z" finished-at="2022-12-26T12:24:28Z">
+  <suite name="Suite" duration-ms="95140" started-at="2022-12-26T16:08:50Z" finished-at="2022-12-26T16:10:25Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="48020" started-at="2022-12-26T12:23:40Z" finished-at="2022-12-26T12:24:28Z">
+    <test name="Test" duration-ms="95140" started-at="2022-12-26T16:08:50Z" finished-at="2022-12-26T16:10:25Z">
       <class name="tests.LoginTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.LoginTest@3e0e1046]" name="setUp" is-config="true" duration-ms="346" started-at="2022-12-26T12:23:40Z" finished-at="2022-12-26T12:23:40Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.LoginTest@1e4f4a5c]" name="setUp" is-config="true" duration-ms="390" started-at="2022-12-26T16:08:50Z" finished-at="2022-12-26T16:08:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="setDriver()[pri:0, instance:tests.LoginTest@3e0e1046]" name="setDriver" is-config="true" duration-ms="3142" started-at="2022-12-26T12:23:40Z" finished-at="2022-12-26T12:23:43Z">
+        <test-method status="PASS" signature="setDriver()[pri:0, instance:tests.LoginTest@1e4f4a5c]" name="setDriver" is-config="true" duration-ms="4344" started-at="2022-12-26T16:08:50Z" finished-at="2022-12-26T16:08:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setDriver -->
-        <test-method status="PASS" signature="loginErrorMsg_TC01(java.lang.reflect.Method)[pri:0, instance:tests.LoginTest@3e0e1046]" name="loginErrorMsg_TC01" duration-ms="3015" started-at="2022-12-26T12:23:43Z" finished-at="2022-12-26T12:23:46Z">
+        <test-method status="PASS" signature="setDriver()[pri:0, instance:tests.LoginTest@1e4f4a5c]" name="setDriver" is-config="true" duration-ms="4294" started-at="2022-12-26T16:08:50Z" finished-at="2022-12-26T16:08:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setDriver -->
+        <test-method status="PASS" signature="setDriver()[pri:0, instance:tests.LoginTest@1e4f4a5c]" name="setDriver" is-config="true" duration-ms="4616" started-at="2022-12-26T16:08:50Z" finished-at="2022-12-26T16:08:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setDriver -->
+        <test-method status="FAIL" signature="loginErrorMsg_TC01(java.lang.reflect.Method)[pri:0, instance:tests.LoginTest@1e4f4a5c]" name="loginErrorMsg_TC01" duration-ms="18330" started-at="2022-12-26T16:08:54Z" finished-at="2022-12-26T16:09:13Z">
           <params>
             <param index="0">
               <value>
@@ -23,28 +31,47 @@
               </value>
             </param>
           </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginErrorMsg_TC01 -->
-        <test-method status="PASS" signature="removeDriver()[pri:0, instance:tests.LoginTest@3e0e1046]" name="removeDriver" is-config="true" duration-ms="1164" started-at="2022-12-26T12:23:46Z" finished-at="2022-12-26T12:23:47Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- removeDriver -->
-        <test-method status="PASS" signature="setDriver()[pri:0, instance:tests.LoginTest@3e0e1046]" name="setDriver" is-config="true" duration-ms="1583" started-at="2022-12-26T12:23:47Z" finished-at="2022-12-26T12:23:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setDriver -->
-        <test-method status="FAIL" signature="loginToSF_TC02()[pri:0, instance:tests.LoginTest@3e0e1046]" name="loginToSF_TC02" duration-ms="16175" started-at="2022-12-26T12:23:49Z" finished-at="2022-12-26T12:24:05Z">
-          <exception class="java.lang.AssertionError">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[Free trial should be seen expected [true] but found [false]]]>
+              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"#username"}
+  (Session info: chrome=108.0.5359.125)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'TEKARCH', ip: '172.23.176.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_281'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:52840}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 34ea5be028695dbff95b45894b1ea119
+*** Element info: {Using=id, value=username}]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Free trial should be seen expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:96)
-at org.testng.Assert.failNotEquals(Assert.java:776)
-at org.testng.Assert.assertTrue(Assert.java:44)
-at tests.LoginTest.loginToSF_TC02(LoginTest.java:46)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#username"}
+  (Session info: chrome=108.0.5359.125)
+For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
+System info: host: 'TEKARCH', ip: '172.23.176.1', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_281'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 108.0.5359.125, chrome: {chromedriverVersion: 108.0.5359.71 (1e0e3868ee06..., userDataDir: C:\Users\user\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:52840}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 34ea5be028695dbff95b45894b1ea119
+*** Element info: {Using=id, value=username}
+at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:372)
+at org.openqa.selenium.By$ById.findElement(By.java:188)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at com.sun.proxy.$Proxy29.isDisplayed(Unknown Source)
+at pages.LoginPage.enterUsername(LoginPage.java:70)
+at tests.LoginTest.loginErrorMsg_TC01(LoginTest.java:34)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -55,48 +82,80 @@ at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
 at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
 at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginErrorMsg_TC01 -->
+        <test-method status="FAIL" signature="loginToSF_TC02()[pri:0, instance:tests.LoginTest@1e4f4a5c]" name="loginToSF_TC02" duration-ms="23576" started-at="2022-12-26T16:08:54Z" finished-at="2022-12-26T16:09:18Z">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Free trial should be seen expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Free trial should be seen expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:96)
+at org.testng.Assert.failNotEquals(Assert.java:776)
+at org.testng.Assert.assertTrue(Assert.java:44)
+at tests.LoginTest.loginToSF_TC02(LoginTest.java:52)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+at java.lang.Thread.run(Unknown Source)
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginToSF_TC02 -->
-        <test-method status="PASS" signature="removeDriver()[pri:0, instance:tests.LoginTest@3e0e1046]" name="removeDriver" is-config="true" duration-ms="851" started-at="2022-12-26T12:24:05Z" finished-at="2022-12-26T12:24:06Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- removeDriver -->
-        <test-method status="PASS" signature="setDriver()[pri:0, instance:tests.LoginTest@3e0e1046]" name="setDriver" is-config="true" duration-ms="1630" started-at="2022-12-26T12:24:06Z" finished-at="2022-12-26T12:24:08Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setDriver -->
-        <test-method status="PASS" signature="rememberMe_TC03()[pri:0, instance:tests.LoginTest@3e0e1046]" name="rememberMe_TC03" duration-ms="19487" started-at="2022-12-26T12:24:08Z" finished-at="2022-12-26T12:24:27Z">
+        <test-method status="PASS" signature="rememberMe_TC03()[pri:0, instance:tests.LoginTest@1e4f4a5c]" name="rememberMe_TC03" duration-ms="29626" started-at="2022-12-26T16:08:55Z" finished-at="2022-12-26T16:09:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- rememberMe_TC03 -->
-        <test-method status="PASS" signature="removeDriver()[pri:0, instance:tests.LoginTest@3e0e1046]" name="removeDriver" is-config="true" duration-ms="926" started-at="2022-12-26T12:24:27Z" finished-at="2022-12-26T12:24:28Z">
+        <test-method status="PASS" signature="removeDriver()[pri:0, instance:tests.LoginTest@1e4f4a5c]" name="removeDriver" is-config="true" duration-ms="665" started-at="2022-12-26T16:09:19Z" finished-at="2022-12-26T16:09:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- removeDriver -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.LoginTest@3e0e1046]" name="tearDown" is-config="true" duration-ms="524" started-at="2022-12-26T12:24:28Z" finished-at="2022-12-26T12:24:29Z">
+        <test-method status="PASS" signature="removeDriver()[pri:0, instance:tests.LoginTest@1e4f4a5c]" name="removeDriver" is-config="true" duration-ms="1093" started-at="2022-12-26T16:09:19Z" finished-at="2022-12-26T16:09:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- removeDriver -->
+        <test-method status="PASS" signature="removeDriver()[pri:0, instance:tests.LoginTest@1e4f4a5c]" name="removeDriver" is-config="true" duration-ms="1369" started-at="2022-12-26T16:09:24Z" finished-at="2022-12-26T16:09:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- removeDriver -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.LoginTest@1e4f4a5c]" name="tearDown" is-config="true" duration-ms="590" started-at="2022-12-26T16:10:25Z" finished-at="2022-12-26T16:10:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- tests.LoginTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="tests.UserMenuTest">
+        <test-method status="PASS" signature="setDriver()[pri:0, instance:tests.UserMenuTest@37313c65]" name="setDriver" is-config="true" duration-ms="1973" started-at="2022-12-26T16:09:20Z" finished-at="2022-12-26T16:09:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setDriver -->
+        <test-method status="PASS" signature="myProfile_TC06()[pri:0, instance:tests.UserMenuTest@37313c65]" name="myProfile_TC06" duration-ms="62738" started-at="2022-12-26T16:09:21Z" finished-at="2022-12-26T16:10:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- myProfile_TC06 -->
+        <test-method status="PASS" signature="removeDriver()[pri:0, instance:tests.UserMenuTest@37313c65]" name="removeDriver" is-config="true" duration-ms="911" started-at="2022-12-26T16:10:24Z" finished-at="2022-12-26T16:10:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- removeDriver -->
+      </class> <!-- tests.UserMenuTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

@@ -76,7 +76,7 @@ public class LoginPage extends BasePage {
 		} else {
 			test.fail("username element is not displayed");
 			logger.info("username webelement not found");
-			test.addScreenCaptureFromPath(Utilities.captureScreenshot(driver));
+//			test.addScreenCaptureFromPath(Utilities.captureScreenshot(driver));
 			logger.info("screen shot captured ");
 			return false;
 		}
@@ -97,7 +97,7 @@ public class LoginPage extends BasePage {
 			return true;
 		} else {
 			test.fail("password element is not displayed");
-			test.addScreenCaptureFromPath(Utilities.captureScreenshot(driver));
+//			test.addScreenCaptureFromPath(Utilities.captureScreenshot(driver));
 			return false;
 		}
 	}
@@ -115,7 +115,7 @@ public class LoginPage extends BasePage {
 			return true;
 		} else {
 			test.fail("failed to click on login button");
-			test.addScreenCaptureFromPath(Utilities.captureScreenshot(driver));
+//			test.addScreenCaptureFromPath(Utilities.captureScreenshot(driver));
 			return false;
 		}
 	}
@@ -137,7 +137,7 @@ public class LoginPage extends BasePage {
 
 	public boolean isFreeTrailSeen(WebDriver driver) throws IOException {
 		test.fail("No free trial seen");
-		test.addScreenCaptureFromPath(Utilities.captureScreenshot(driver));
+//		test.addScreenCaptureFromPath(Utilities.captureScreenshot(driver));
 		return false;
 	}
 
@@ -184,7 +184,7 @@ public class LoginPage extends BasePage {
 			test.pass("Logged in to SFDC");
 		} else {
 			test.fail("Should login in to SFDC");
-			test.addScreenCaptureFromPath(Utilities.captureScreenshot(driver), "Login page error");
+//			test.addScreenCaptureFromPath(Utilities.captureScreenshot(driver), "Login page error");
 		}
 		return isLoginSuccess;
 	}
