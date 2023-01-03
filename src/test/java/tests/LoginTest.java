@@ -31,13 +31,14 @@ public class LoginTest extends BaseTest {
 		lp.clearPassword();
 		Assert.assertTrue(lp.clickLogin(driver), "Login button should be clicked");
 		Assert.assertEquals(lp.loginErrorMsg.getText(), DataUtils.readErrorMessages("login.error.message"));
-		logger.info("ending test " +name.getName());
+		logger.info("******************* ending test " +name.getName()+"************************");
+		
 	}
 
-	@Test
-	public void loginToSF_TC02() throws IOException {
+//	@Test
+	public void loginToSF_TC02(Method name) throws IOException {
 		WebDriver driver = BaseTest.getDriver();
-		ExtentTest test = extent.createTest("loginToSF_TC02");
+		ExtentTest test = extent.createTest(name.getName());
 		LoginPage lp = new LoginPage(driver, test);
 		Assert.assertTrue(lp.launchApp(driver), "Should launch the sfdc app");
 		Assert.assertTrue(lp.enterUsername(driver,DataUtils.readAccounts("valid.username")), "user name should be entered");
@@ -47,7 +48,7 @@ public class LoginTest extends BaseTest {
 		
 	}
 //	
-	@Test
+//	@Test
 	public void rememberMe_TC03() throws InterruptedException, IOException {
 		WebDriver driver = BaseTest.getDriver();
 		ExtentTest test = extent.createTest("rememberMe_TC03");

@@ -10,6 +10,6 @@ public class BasePage {
 	
 	protected ExtentTest test;
 //	protected WebDriver driver;
-	protected static Logger logger = LogManager.getLogger(BasePage.class.getName());
+	protected static Logger logger = LogManager.getLogger();
 
 }

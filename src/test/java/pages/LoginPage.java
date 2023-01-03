@@ -77,7 +77,7 @@ public class LoginPage extends BasePage {
 			test.fail("username element is not displayed");
 			logger.info("username webelement not found");
 			test.addScreenCaptureFromPath(Utilities.captureScreenshot(driver));
-			logger.info("screen shot captured ");
+			logger.error("enter username failed");
 			return false;
 		}
 	}

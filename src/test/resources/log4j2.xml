@@ -1,4 +1,4 @@
-<Configuration status="warn" name="sfdc" packages="">
+<Configuration status="info" name="sfdc" packages="">
 	<Appenders>
 		<RollingFile name="rollingFile" fileName="target/sfdc.log" filePattern="target/sfdc-%d{yyyy-MM-dd-HH-mm}-%i.log">
 			<PatternLayout>

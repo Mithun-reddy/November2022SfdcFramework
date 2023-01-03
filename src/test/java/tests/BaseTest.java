@@ -35,7 +35,9 @@ public class BaseTest {
 	public void setDriver() {
 		logger.info("setDriver(): Initiated");
 		WebDriver driver = BaseTest.getBrowserType("chrome", false);
+		logger.info("setDriver(): Driver configuration is successfull");
 		threadLocalDriver.set(driver);
+		logger.info("setDriver(): Saved object in thread local");
 		driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 
 	}
@@ -64,12 +66,13 @@ public class BaseTest {
 	}
 	
 	public static void configureExtentReport() {
+		logger.info("configureExtentReport(): Initiated.. ");
 		String dateFormat = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 		String reportPath = System.getProperty("user.dir")+"\\src\\test\\java\\reports\\"+ dateFormat+"_sfdc.html";
 		extent = new ExtentReports();
 		ExtentSparkReporter sparkHtml = new ExtentSparkReporter(reportPath);
 		extent.attachReporter(sparkHtml);
-		logger.info("configureExtentReport(): success");
+		logger.info("configureExtentReport(): success ..");
 		
 	}
 

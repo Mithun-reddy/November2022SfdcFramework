@@ -200,11 +200,12 @@ public class UserMenuPage extends BasePage{
 	 */
 	public boolean verifyUserMenuItems() throws IOException {
 		boolean isOptionVerified = true;
-		
+		logger.info("verifyUserMenuItems() : Verifying user menu items.. ");
 		String[] expectedUserMenuItems = DataUtils.readErrorMessages("usermenu.items").split(",");
 //		List<WebElement> listOfuserMenuElements 
 		for (int i = 0; i < userMenuOptions.size(); i++) {
 			String actualUserMenuItemValue = userMenuOptions.get(i).getText();
+			logger.info("verifyUserMenuItems() : User menu item value is: "+actualUserMenuItemValue);
 			if (actualUserMenuItemValue.equals(expectedUserMenuItems[i])) {
 				System.out.println("The option " + expectedUserMenuItems[i] + " passed");
 			} else {
