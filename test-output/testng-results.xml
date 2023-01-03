@@ -2,32 +2,32 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="61783" started-at="2022-12-26T11:38:48Z" finished-at="2022-12-26T11:39:50Z">
+  <suite name="Default suite" duration-ms="41211" started-at="2023-01-03T19:16:04Z" finished-at="2023-01-03T19:16:45Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="61783" started-at="2022-12-26T11:38:48Z" finished-at="2022-12-26T11:39:50Z">
-      <class name="tests.UserMenuTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.UserMenuTest@363ee3a2]" name="setUp" is-config="true" duration-ms="360" started-at="2022-12-26T11:38:48Z" finished-at="2022-12-26T11:38:48Z">
+    <test name="Default test" duration-ms="41211" started-at="2023-01-03T19:16:04Z" finished-at="2023-01-03T19:16:45Z">
+      <class name="tests.LoginTest">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:tests.LoginTest@363ee3a2]" name="setUp" is-config="true" duration-ms="755" started-at="2023-01-03T19:16:03Z" finished-at="2023-01-03T19:16:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="setDriver()[pri:0, instance:tests.UserMenuTest@363ee3a2]" name="setDriver" is-config="true" duration-ms="2545" started-at="2022-12-26T11:38:48Z" finished-at="2022-12-26T11:38:51Z">
+        <test-method status="PASS" signature="setDriver()[pri:0, instance:tests.LoginTest@363ee3a2]" name="setDriver" is-config="true" duration-ms="3802" started-at="2023-01-03T19:16:04Z" finished-at="2023-01-03T19:16:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setDriver -->
-        <test-method status="PASS" signature="myProfile_TC06()[pri:0, instance:tests.UserMenuTest@363ee3a2]" name="myProfile_TC06" duration-ms="58313" started-at="2022-12-26T11:38:51Z" finished-at="2022-12-26T11:39:49Z">
+        <test-method status="PASS" signature="tableHandling()[pri:0, instance:tests.LoginTest@363ee3a2]" name="tableHandling" duration-ms="36086" started-at="2023-01-03T19:16:08Z" finished-at="2023-01-03T19:16:44Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- myProfile_TC06 -->
-        <test-method status="PASS" signature="removeDriver()[pri:0, instance:tests.UserMenuTest@363ee3a2]" name="removeDriver" is-config="true" duration-ms="903" started-at="2022-12-26T11:39:49Z" finished-at="2022-12-26T11:39:50Z">
+        </test-method> <!-- tableHandling -->
+        <test-method status="PASS" signature="removeDriver()[pri:0, instance:tests.LoginTest@363ee3a2]" name="removeDriver" is-config="true" duration-ms="1282" started-at="2023-01-03T19:16:44Z" finished-at="2023-01-03T19:16:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- removeDriver -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.UserMenuTest@363ee3a2]" name="tearDown" is-config="true" duration-ms="432" started-at="2022-12-26T11:39:50Z" finished-at="2022-12-26T11:39:50Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.LoginTest@363ee3a2]" name="tearDown" is-config="true" duration-ms="941" started-at="2023-01-03T19:16:45Z" finished-at="2023-01-03T19:16:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- tests.UserMenuTest -->
+      </class> <!-- tests.LoginTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

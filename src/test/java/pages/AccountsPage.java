@@ -2,13 +2,18 @@ package pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.Select;
+
+import com.aventstack.extentreports.ExtentTest;
 
 public class AccountsPage extends BasePage {
 	
-	public AccountsPage(WebDriver driver) {
+	public AccountsPage(WebDriver driver, ExtentTest test) {
 		PageFactory.initElements(driver, this);
+		this.test = test;
 	}
 
 	@FindBy(xpath="//*[@id=\'lexBanner\']/a[3]")
@@ -20,7 +25,7 @@ public class AccountsPage extends BasePage {
 	@FindBy(css="#fcf")
 	public WebElement contactsPageViewDropdownList;
 
-	@FindBy(xpath="//*[@id=\'filter_element\']/div/span/span[1]/input")
+	@FindBy(name = "go")
 	public WebElement contactsPageGoButton ;
 
 	@FindBy(css="#filter_element > div > span > span.fFooter > a:nth-child(1)")
@@ -79,6 +84,11 @@ public class AccountsPage extends BasePage {
 
 	@FindBy(css="#createNewLabel")
 	public WebElement contactsPageCreateNewDropdownList;
+	
+	public void selectOptionInDropdown(String  value) {
+		Select select = new Select(contactsPageViewDropdownList);
+		select.selectByVisibleText(value);
+	}
 	
 
 
