@@ -91,6 +91,15 @@ public class Utilities {
 		
 	}
 	
+	public static String[][] readExcelArray(){
+		String data[][] = {};
+		
+		
+		// Logic which will read excel file
+		
+		return data;
+	}
+	
 	
 	
 }

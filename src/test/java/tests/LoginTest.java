@@ -111,7 +111,7 @@ public class LoginTest extends BaseTest {
 	@Test(dataProvider = "login test data")
 	public void loginToSFDC(String username, String pass) throws IOException, InterruptedException {
 		WebDriver driver = BaseTest.getDriver();
-		ExtentTest test = extent.createTest("loginToSF_TC02");
+		ExtentTest test = extent.createTest("loginToSFDC");
 		LoginPage lp = new LoginPage(driver, test);
 		AccountsPage ap = new AccountsPage(driver, test);
 		
@@ -126,10 +126,17 @@ public class LoginTest extends BaseTest {
 	public Object[][] loginCreds(){
 		
 		
-		return new Object[][] {
+		return new String[][] {
 			{"jul22.mithun@ta.com","Honda8511"},
 			{"abcd@abcd.com","1234"}
 		};
+	}
+	
+	@DataProvider(name = "login test accounts")
+	public String[][] loginAccounts(){
+		
+		
+		return Utilities.readExcelArray();
 	}
 	
 }
