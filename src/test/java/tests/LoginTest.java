@@ -27,7 +27,7 @@ import utilities.Utilities;
 
 public class LoginTest extends BaseTest {
 
-//	@Test
+	@Test(priority = 0)
 	public void loginErrorMsg_TC01() throws IOException {
 		ExtentTest test = extent.createTest("loginErrorMsg_TC01");
 		WebDriver driver = BaseTest.getDriver();
@@ -39,7 +39,7 @@ public class LoginTest extends BaseTest {
 		Assert.assertEquals(lp.loginErrorMsg.getText(), DataUtils.readErrorMessages("login.error.message"));
 	}
 
-//	@Test
+	@Test(priority = 1)
 	public void loginToSF_TC02() throws IOException {
 		WebDriver driver = BaseTest.getDriver();
 		ExtentTest test = extent.createTest("loginToSF_TC02");
@@ -52,7 +52,7 @@ public class LoginTest extends BaseTest {
 		
 	}
 //	
-//	@Test
+	@Test (priority = 2)
 	public void rememberMe_TC03() throws InterruptedException, IOException {
 		WebDriver driver = BaseTest.getDriver();
 		ExtentTest test = extent.createTest("rememberMe_TC03");
@@ -71,7 +71,7 @@ public class LoginTest extends BaseTest {
 		
 	}
 	
-	@Test
+//	@Test
 	public void tableHandling() throws IOException, InterruptedException {
 		WebDriver driver = BaseTest.getDriver();
 		ExtentTest test = extent.createTest("loginToSF_TC02");
