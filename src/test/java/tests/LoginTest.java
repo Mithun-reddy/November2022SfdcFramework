@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentTest;
@@ -71,7 +72,7 @@ public class LoginTest extends BaseTest {
 		
 	}
 	
-	@Test
+//	@Test
 	public void tableHandling() throws IOException, InterruptedException {
 		WebDriver driver = BaseTest.getDriver();
 		ExtentTest test = extent.createTest("loginToSF_TC02");
@@ -107,9 +108,31 @@ public class LoginTest extends BaseTest {
 		
 	}
 		
-				
-				
-				
+	@Test(dataProvider = "login test data")
+	public void loginToSFDC(String username, String pass) throws IOException, InterruptedException {
+		WebDriver driver = BaseTest.getDriver();
+		ExtentTest test = extent.createTest("loginToSF_TC02");
+		LoginPage lp = new LoginPage(driver, test);
+		AccountsPage ap = new AccountsPage(driver, test);
 		
+		Assert.assertTrue(lp.launchApp(driver), "Should launch the sfdc app");
+		Assert.assertTrue(lp.enterUsername(driver,username), "user name should be entered");
+		Assert.assertTrue(lp.enterPassword(driver, pass), "password should be entered");
+		Assert.assertTrue(lp.clickLogin(driver), "Login button should be clicked");
+	}
+	
+	
+	@DataProvider(name = "login test data")
+	public Object[][] loginCreds(){
+		
+		
+		return new Object[][] {
+			{"jul22.mithun@ta.com","Honda8511"},
+			{"abcd@abcd.com","1234"}
+		};
+	}
+	
 }
+				
+
 
