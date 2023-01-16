@@ -35,7 +35,7 @@ public class LoginTest extends BaseTest {
 		
 	}
 
-//	@Test
+	@Test
 	public void loginToSF_TC02(Method name) throws IOException {
 		WebDriver driver = BaseTest.getDriver();
 		ExtentTest test = extent.createTest(name.getName());
